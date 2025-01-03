@@ -1,4 +1,5 @@
 import unittest
+from xmlrunner import XMLTestRunner
 from app import generate_message
 
 class TestApp(unittest.TestCase):
@@ -7,4 +8,6 @@ class TestApp(unittest.TestCase):
         self.assertEqual(generate_message(), expected_message)
 
 if __name__ == "__main__":
-    unittest.main()
+    with open('test-reports/results.xml', 'w') as output:
+        unittest.main(testRunner=XMLTestRunner(output=output))
+
