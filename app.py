@@ -1,5 +1,5 @@
 def generate_message():
-    return "Witaj, świecie!"
+    return "hello world"
 
 def main():
     message = generate_message()
